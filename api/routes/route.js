@@ -6,7 +6,8 @@ module.exports = function(app) {
 
 	const bodyParser = require('body-parser');
 	app.use(bodyParser.urlencoded({extended: true}));
-	app.use(bodyParser.json());
+	app.use(bodyParser.json({limit: '50mb'}));
+	//app.use(express.json({limit: '50mb'}));
 
 	app.route('/asset')
 		//.get(controller.getAll);
@@ -15,25 +16,7 @@ module.exports = function(app) {
 		.get(controller.getItem)
 		.put(controller.putItem);
 
-	app.route('/asset/:peerId/carrier/:key')
-		.get(controller.getItemByCarrier);
-
-	app.route('/asset/:peerId/search/')
-		.post(controller.getItemWithParam);
-
-	app.route('/asset/:peerId/vessel/:key')
-		.get(controller.getItemByVessel);
-
-	app.route('/asset/:peerId/voyage/:key')
-		.get(controller.getItemByVoyage);
-
-	app.route('/asset/:peerId/vsldate/:key')
-		.get(controller.getItemByVsldate);
-
-	app.route('/asset/:peerId/snddate/:key')
-		.get(controller.getItemBySnddate);
-
-	app.route('/asset/:peerId/equiment/:key')
-		.get(controller.getItemByEquiment);
+        app.route('/asset/:peerId/search/')
+                .post(controller.getItemWithParam);
 
 };

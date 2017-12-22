@@ -225,8 +225,8 @@ func (s *SmartContract) queryWithParam(APIstub shim.ChaincodeStubInterface, args
 	fmt.Printf("args: %s", condition)
 	//var queryString string
         //queryString := fmt.Sprintf("{\"selector\":{\"carrier\":\"%s\"}}", carrier)
-        //queryString := fmt.Sprintf("{\"selector\":\"%s\"}", condition)
-	queryString := fmt.Sprintf("{\"selector\":{%s}}", condition)
+        queryString := fmt.Sprintf("{\"selector\":\"%s\"}", condition)
+	//queryString := fmt.Sprintf("{\"selector\":{%s}}", condition)
 	//queryString := fmt.Sprintf("{\"selector\":{%s}}", condition)
 	//condition
 	//queryString = fmt.Sprintf ("{\" selector \ ": {\" $ and \ ": [{\"% s \ ": {\" $ gte \ ":% s}}, {\"% s \ ": {\" $ lte \ ":% s}}]}}", args [0], between [0], args [0], between [1])
